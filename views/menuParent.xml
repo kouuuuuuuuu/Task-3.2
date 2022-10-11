@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <menuitem
+                id="project_training"
+                name="Project Study"
+                sequence="89"
+                groups="base.group_user"
+        />
+</odoo>

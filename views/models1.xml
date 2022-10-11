@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <record id="project_managers_project" model="ir.ui.view">
+            <field name="name">Project Study</field>
+            <field name="model">project.study</field>
+            <field name="arch" type="xml">
+                <form string="Fiscal">
+                    <sheet>
+                        <group>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="status"/>
+                                <field name="assign_to"/>
+                                <field name="project_managers" widget="many2many_tags"/>
+                                <field name="task_attendees_ids"/>
+                            </group>
+                            <group>
+                                <field name="dateline"/>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_managers_tree_project" model="ir.ui.view">
+            <field name="name">Project Study</field>
+            <field name="model">project.study</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="dateline" string="Deadline"/>
+                    <field name="status"/>
+                    <field name="project_managers" widget="many2many_tags"/>
+                    <field name="task_attendees_ids"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="project_managers_tree_project_search" model="ir.ui.view">
+            <field name="name">Project Study</field>
+            <field name="model">project.study</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" placeholder="Name"/>
+                    <field name="assign_to"/>
+                    <filter string="My task" name="my_task" domain="[('assign_to','=', uid)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Assign to" name="assign_to" context="{'group_by':'assign_to'}"/>
+                        <filter string="Status" name="status" context="{'group_by':'status'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
