@@ -17,10 +17,14 @@
                                 <field name="assign_to"/>
                                 <field name="project_managers" widget="many2many_tags"/>
                                 <field name="task_attendees_ids" widget="many2many_tags"/>
+                                <field name="tags"/>
+                                <field name="customer"/>
                             </group>
                             <group>
                                 <field name="dateline"/>
                                 <field name="note"/>
+                                <field name="create_uid" string="Assignee"/>
+                                <field name="assigneeUpdateDate" string="Date update"/>
                             </group>
                         </group>
                         <group>
