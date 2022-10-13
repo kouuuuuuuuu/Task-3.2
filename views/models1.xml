@@ -16,7 +16,7 @@
                                 <field name="status"/>
                                 <field name="assign_to"/>
                                 <field name="project_managers" widget="many2many_tags"/>
-                                <field name="task_attendees_ids"/>
+                                <field name="task_attendees_ids" widget="many2many_tags"/>
                             </group>
                             <group>
                                 <field name="dateline"/>
@@ -40,7 +40,7 @@
                     <field name="dateline" string="Deadline"/>
                     <field name="status"/>
                     <field name="project_managers" widget="many2many_tags"/>
-                    <field name="task_attendees_ids"/>
+                    <field name="task_attendees_ids" widget="many2many_tags"/>
                 </tree>
             </field>
         </record>
